@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+  <title>Menu Page</title>
+
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Martel|Orbitron|Unica+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+   <link rel="stylesheet" type="text/css" href="{% static 'new_reg.css' %}">
+  <!-- <link rel="stylesheet" href="new_reg.css"> -->
+
+</head>
+
+<body>
+  <div class="container-demo">
+    <div class="content">
+      <div id="large-header" class="large-header">
+        <canvas id="demo-canvas"></canvas>
+        <h1 class="main-title"><span class="thin"></span>Participant Data</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="form-container">
+        <form action="/add_data" method="POST">
+          {% csrf_token %}
+          <div class="general">
+            <div class="row">
+              <div class="col-25"><label for="participant1">Participant 1</label></div>
+              <div class="col-75"><input type="text" name="participant1" id="participant1"
+                  placeholder="  Name of Participant 1"></div>
+            </div>
+            <div class="row">
+              <div class="col-25"><label for="participant2">Participant 2</label></div>
+              <div class="col-75"><input type="text" name="participant2" id="participant2"
+                  placeholder="  Name of Participant 2"></div>
+            </div>
+            <div class="row">
+              <div class="col-25"><label for="mail">Email ID</label></div>
+              <div class="col-75"><input type="email" name="mail" placeholder="  Email ID"></div>
+            </div>
+            <div class="row">
+              <div class="col-25"><label for="contact">Mobile Number</label></div>
+              <div class="col-75"><input type="tel" name="contact" placeholder="  Mobile Number"></div>
+            </div>
+            <div class="row">
+              <div class="col-25"><label for="collegename">College</label></div>
+              <div class="col-75"><input type="text" name="collegeName" placeholder="  College Name"></div>
+            </div>
+            <div class="row">
+              <div class="col-25"><label for="volunteer">Volunteer</label></div>
+              <div class="col-75"><input type="text" name="volunteer" placeholder="  Volunteer Name"></div>
+            </div>
+          </div>
+          <h3 style="padding-top: 20px;">Events</h3><br>
+          <div class="events1">
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">Dextrous</div>
+              <div class="col-sm-3"><input type="checkbox" class="events" name="Dextrous"></div>
+              <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">Just Coding</div>
+              <div class="col-sm-3"><input type="checkbox" class="events" name="JustCoding"></div>
+              <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">Recode It!</div>
+              <div class="col-sm-3"><input type="checkbox" class="events" name="Recode_It"></div>
+              <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">Code Buddy</div>
+              <div class="col-sm-3"><input type="checkbox" class="events" name="Code_Buddy"></div>
+              <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">BugOff</div>
+              <div class="col-sm-3"><input type="checkbox" class="events" name="Bug_Off"></div>
+              <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">Electroquest</div>
+              <div class="col-sm-3"><input type="checkbox" class="events" name="ElectroQuest"></div>
+              <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">DataQuest</div>
+              <div class="col-sm-3"><input type="checkbox" class="events" name="DataQuest"></div>
+              <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">Web and Android Development</div>
+              <div class="col-sm-3"><input type="checkbox" class="events" name="Web_and_App_Development"></div>
+              <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">Quiz2Bid</div>
+              <div class="col-sm-3"><input type="checkbox" class="events" name="Quiz2Bid"></div>
+              <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">Fandom Quiz</div>
+              <div class="col-sm-3"><input type="checkbox" class="events" name="Fandom"></div>
+              <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">Insight</div>
+              <div class="col-sm-3"><input type="checkbox" class="events" name="Insight"></div>
+              <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">Cerebro</div>
+              <div class="col-sm-3"><input type="checkbox" class="events" name="Cerebro"></div>
+              <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">Photoshop Royale</div>
+              <div class="col-sm-3"><input type="checkbox" class="events" name="Photoshop_Royale"></div>
+              <div class="col-sm-3"></div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-4"></div>
+              <div class="col-sm-4"><input type="submit" value="Register" style="margin-top: 10px;"></div>
+              <div class="col-sm-4"></div>
+            </div>
+            <br>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-3" style="color: white">
+      <!-- Volunteer Name : -->
+      <p id="volunteername" style="display: inline;"></p>
+    </div>
+
+  </div>
+
+
+
+</body>
+<!-- 
+<script type="text/javascript">
+  function newreg() {
+    var checkboxes = document.getElementsByClassName("events");
+    var checked = [];
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) {
+        checked.push(checkboxes[i].name);
+      }
+    }
+    for (var j = 0; j < checked.length; j++) {
+      alert(checked[j]);
+    }
+  return checked;
+}
+</script>
+<script type="text/javascript">
+  function add() {
+    $.ajax({
+      type: "POST",
+      url: "/add_data2",
+      data: {
+        csrfmiddlewaretoken: '{{csrf_token}}',
+        event: JSON.stringify(newreg()),
+        userid: "{{userid}}",
+      },
+      success: function () {
+      }
+    });
+  }
+</script> -->
+
+<!-- <script>
+  function add() {
+    var checkboxes = document.getElementsByClassName("events");
+    var checked = [];
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) {
+        checked.push(checkboxes[i].name);
+      }
+    }
+    for (var j = 0; j < checked.length; j++) {
+      alert(checked[j]);
+    }
+    var partic1 = document.getElementsById("participant1").value;
+    var partic2 = document.getElementsById("participant2").value;
+    console.log(partic1);
+    
+    alert(partic1); -->
+<!-- // $.ajax({
+    //   type: "POST",
+    //   url: "/add_data",
+    //   data: {
+    //     csrfmiddlewaretoken: '{{csrf_token}}',
+    //     event: JSON.stringify(checked),
+    //     name1: partic1,
+    //     name2: partic2,
+    //   },
+    //   success: function () {
+    //   }
+    // });
+  } -->
+
+<!-- </script> -->
+
+</html>

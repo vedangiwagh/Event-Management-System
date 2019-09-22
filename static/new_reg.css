@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #252525;
+    font-family: sans-serif;
+    background-image: url("bg.jpg");
+    /* background-image: url("arccreactor.png"); */
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .main-title {
+    text-shadow: 2px 2px 2px green;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    color: #F9F1E9;
+    text-align: center;
+    top: 10%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    font-size: 50px;
+ }
+ 
+ .column1 {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+ form{
+    margin-top: 130px;
+    border-radius:20px  20px 0 0 ;
+    background:transparent;
+    color:white;
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    /* opacity: 0%; */
+  }
+
+  .general{
+    border: 1px solid wheat;
+    padding: 10px 10px 10px 10px;
+    width: 100%;
+  }
+  label{
+    font-size: 20px;
+    text-align: right;
+  }
+  .col-25 {
+    float: left;
+    width: 33.33%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 66.66%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  input.events{
+      width: 25px;
+      height: 25px;
+      padding-top:2px;
+      padding-bottom: 2px; 
+      cursor: pointer;
+  }
+
+  input[type="text"],
+  [type="email"],
+  [type="tel"]{
+    margin-bottom: 5px;
+    width: 75%;
+    padding: 5px 5px 5px 5px;
+    background: transparent; 
+    border: 2px solid green ;
+    color: whitesmoke;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    border-radius: 20px;
+
+    -webkit-transition: width .35s ease-in-out;
+    transition: width .35s ease-in-out;
+  }
+
+  input[type="submit"]{
+    background-color: white;
+    color: black;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    width: 70%;
+    margin-top: 100px;
+  }
+
+  input[type="text"]:hover,
+  [type="email"]:hover,
+  [type="tel"]:hover{   
+    margin-bottom: 5px;
+    border-radius: 20px;
+    background: transparent; 
+    border: 2px solid lightblue;
+    /* transform: scaleX(1.1); */
+    color: whitesmoke;
+    font-size: 20px;
+    transition-duration: 200ms;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"]:focus,
+  [type="email"]:focus,
+  [type="tel"]:focus{
+    background-color: transparent;
+    color: white;
+  }
+  form{
+    width: 66.66%;
+    text-align: center;
+  }
+
+  .form-container{
+    padding-top: 20%;
+    text-align: left;
+    padding-left: 30px;
+  }

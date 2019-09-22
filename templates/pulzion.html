@@ -1,0 +1,292 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>events</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'pulzion1.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Unica+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+		</script>
+
+	<script type="text/javascript">
+
+		function rep(eve) {
+			$.ajax({
+				type: "POST",
+				url: "/rep",
+				data: {
+					csrfmiddlewaretoken: '{{csrf_token}}',
+					event: eve,
+
+
+				},
+				success: function () {
+					window.location.href = '/rep_'
+				}
+			});
+
+		}
+
+		// function nonrep(eve, t) {
+		// 	$.ajax({
+		// 		type: "POST",
+		// 		url: "nonrep",
+		// 		data: {
+		// 			csrfmiddlewaretoken: '{{csrf_token}}',
+		// 			event: eve,
+		// 			time: t,
+
+		// 		},
+		// 		success: function () {
+		// 			window.location.href = './nonrep_'
+		// 		}
+		// 	});
+
+		// }
+	</script>
+</head>
+
+<body style="background-color: #04132a;">
+
+	<p class="text" style="    font-size: 146px;
+		color: #f0fcfc;
+		/*text-shadow: 10px 7px 4px #8e8a93;*/
+		background: none;
+		position: absolute;
+		z-index: 2;
+		top: 43px;
+		left: 50%;
+		transform: translateX(-50%);">EVENTS</p>
+	<div class="jumbotron" style="  background-color: #04132a;  filter: blur(3px);
+		height: 280px;
+		box-shadow: inset 1px 1px 20px 18px  #04132a">
+		<!--<div class="container text-center"><p class="text" style="font-size: 146px;">EVENTS</p></div>	-->
+	</div>
+
+	<div class="ui">
+		<p class="zoom"><span class="zoom zoomin">+</span><span class="zoom zoomout">-</span></p>
+		<p class="zoomlevel"><span class="percent">100</span> % - (<span class="width"></span>px)(<span
+				class="height"></span>px)</p>
+		<p>Dead: <span class="dead">0</span></p>
+		<p>Alive: <span class="alive">0</span></p>
+		<p>Drawn: <span class="drawn">0</span></p>
+		<p><span class="fps">0</span> FPS</p>
+	</div>
+
+	<div class="container">
+		<div class="wrapper"></div>
+		<div class="row">
+			<div class="col-lg-3">
+				<a onclick="rep('Dextrous')" target="_blank" class="btn">
+					<div class="card " style="width: 18rem;">
+						<img class="card-img-top" src="{% static 'dextrous.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Dextrous</h5>
+						</div>
+					</div>
+				</a>
+				<br>
+				<!-- <button class="btn-primary" onclick="rep('Dextrous')">Reported</button> -->
+			</div>
+
+			<div class="col-lg-3">
+				<a onclick="rep('JustCoding')" target="_blank" class="btn ">
+					<div class="card " style="width: 18rem;">
+
+						<img class="card-img-top" src="{% static 'justcoding.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Just Coding</h5>
+
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3">
+				<a onclick="rep('Recode_It')" target="_blank" class="btn ">
+					<div class="card " style="width: 18rem;">
+						<img class="card-img-top" src="{% static 'recodeit.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Recode It!</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3">
+				<a onclick="rep('Code_Buddy')" target="_blank" class="btn ">
+					<div class="card " style="width: 18rem;">
+						<img class="card-img-top" src="{% static 'codebuddy.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Code Buddy</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-3">
+				<a onclick="rep('BugOff')" target="_blank" class="btn ">
+					<div class="card " style="width: 18rem;">
+						<img class="card-img-top" src="{% static 'bugoff.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">BugOff</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3">
+				<a onclick="rep('ElectroQuest')" target="_blank" class="btn ">
+					<div class="card " style="width: 18rem;">
+						<img class="card-img-top" src="{% static 'electroquest.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Electroquest</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3">
+				<a onclick="rep('DataQuest')" target="_blank" class="btn ">
+					<div class="card " style="width: 18rem;">
+						<img class="card-img-top" src="{% static 'dataquest.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">DataQuest</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3">
+				<a onclick="rep('Web_and_App_Development')" target="_blank" class="btn ">
+					<div class="card " style="width: 18rem;">
+						<img class="card-img-top" src="{% static 'webapp.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Web & Android Dev</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-3">
+				<a onclick="rep('Quiz2Bid')" target="_blank" class="btn ">
+					<div class="card " style="width: 18rem;">
+						<img class="card-img-top" src="{% static 'quiztobid.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Quiz2Bid</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3">
+				<a onclick="rep('Photoshop_Royale')" target="_blank" class="btn ">
+					<div class="card" style="width: 18rem;">
+						<img class="card-img-top" src="{% static 'psroyale.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Photoshop Royale</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-lg-3">
+				<a onclick="rep('Insight')" target="_blank" class="btn ">
+					<div class="card " style="width: 18rem;">
+						<img class="card-img-top" src="{% static 'insight.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Insight</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3">
+				<a onclick="rep('Cerebro')" target="_blank" class="btn ">
+					<div class="card " style="width: 18rem;">
+						<img class="card-img-top" src="{% static 'cerebro.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Cerebro</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<!-- <div class="row1">
+			<a onclick="rep('Photoshop_Royale')" target="_blank" class="btn ">
+				<div class="card" style="width: 18rem;">
+					<img class="card-img-top" src="{% static 'psroyale.jpg' %}" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Photoshop Royale</h5>
+					</div>
+				</div>
+			</a>
+		</div> -->
+
+
+		<div class="row">
+			<div class="col-lg-3">
+				<a onclick="rep('Friends')" target="_blank" class="btn ">
+					<div class="card " style="width: 18rem;">
+						<img class="card-img-top" src="{% static 'f2.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Friends</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3">
+				<a onclick="rep('Harry_Potter')" target="_blank" class="btn ">
+					<div class="card " style="width: 18rem;">
+						<img class="card-img-top" src="{% static 'hp.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Harry Potter</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3">
+				<a onclick="rep('GOT')" target="_blank" class="btn ">
+					<div class="card " style="width: 18rem;">
+						<img class="card-img-top" src="{% static 'got.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">GOT</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3">
+				<a onclick="rep('Marvel')" target="_blank" class="btn ">
+					<div class="card " style="width: 18rem;">
+						<img class="card-img-top" src="{% static 'mvdc.jpg' %}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Marvel V/s DC</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+
+
+
+
+
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
